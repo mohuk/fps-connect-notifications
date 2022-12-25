@@ -7,7 +7,7 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs18.x
-  profile: serverless-fps-connect-agent
+  profile: serverless-fps-connect-agent #Use your own AWS profile
 
 functions:
   index:
