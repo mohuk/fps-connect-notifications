@@ -2,10 +2,10 @@
 const fpsConnectService = require('./fps-connect.service');
 const notificationService = require('./notification.service');
 
-module.exports.hello = async function hello (event) {
+module.exports.handler = async function handler (event) {
   const {circulars, newsAnnouncements} = await fpsConnectService.getCircularsAndNewsAnnouncements();
   const now = new Date(new Date().setUTCHours(0,0,0,0));
-  const latestCircularDate = circulars[0].date;
+  const latestCircularDate = circulars[0]                                                                                                                                                                                                                                                                                          .date;
   const latestNewsAnnouncementDate = newsAnnouncements[0].date; 
   if(latestCircularDate === now || latestNewsAnnouncementDate === now) {
     try {
