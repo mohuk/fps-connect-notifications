@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "test": "jest",
+    "deploy": "serverless deploy"
+  },
   "dependencies": {
     "aws-sdk": "^2.1194.0",
     "axios": "^0.27.2",

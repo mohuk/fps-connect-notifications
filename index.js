@@ -7,7 +7,7 @@ module.exports.handler = async function handler (event) {
   const now = new Date(new Date().setUTCHours(0,0,0,0));
   const latestCircularDate = circulars[0]?.date;
   const latestNewsAnnouncementDate = newsAnnouncements[0]?.date;
-  if(latestCircularDate === now || latestNewsAnnouncementDate === now) {
+  if(isDateEqual(latestCircularDate, now) || isDateEqual(latestNewsAnnouncementDate, now)) {
     try {
       await notificationService.sendSms();
       return {
@@ -34,3 +34,7 @@ module.exports.handler = async function handler (event) {
     }
   }
 };
+
+function isDateEqual(d1, d2) {
+  return d1.getDate() === d2.getDate() && d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear();
+}
