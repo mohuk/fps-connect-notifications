@@ -13,8 +13,6 @@ on:
 jobs:
   deploy:
     environment: production
-    env:
-      FPS_PARENT_CRENDENTIALS: ${{secrets.FPS_PARENT_CREDENTIALS}}
     if: ${{github.event.workflow_run.conclusion == 'success'}}
     runs-on: ubuntu-latest
     steps:
@@ -24,5 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+      env: # Or as an environment variable
+        FPS_PARENT_CREDENTIALS: ${{ secrets.FPS_PARENT_CREDENTIALS }}
     - run: npm ci
     - run: npm run deploy
