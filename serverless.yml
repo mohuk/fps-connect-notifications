@@ -13,4 +13,4 @@ functions:
   index:
     handler: index.handler
     environment: 
-      FPS_PARENT_CREDENTIALS: ${file(./credentials.json):cookie}
+      FPS_PARENT_CREDENTIALS: ${env:FPS_PARENT_CREDENTIALS}
