@@ -9,7 +9,7 @@ module.exports.handler = async function handler (event) {
   const latestNewsAnnouncementDate = newsAnnouncements[0]?.date;
   if(isDateEqual(latestCircularDate, now) || isDateEqual(latestNewsAnnouncementDate, now)) {
     try {
-      await notificationService.sendSms();
+      const response = await notificationService.sendSms();
       return {
         status: 'Ok',
         message: 'SMS sent',

@@ -3,6 +3,9 @@
     "test": "jest",
     "deploy": "serverless deploy"
   },
+  "jest": {
+    "globalSetup": "./test/global-setup.js"
+  },
   "dependencies": {
     "aws-sdk": "^2.1194.0",
     "axios": "^0.27.2",
