@@ -1,6 +1,5 @@
 
 const fpsConnectService = require('../fps-connect.service');
-const credentials = require('../credentials.json');
 const axios = require('axios');
 const mockApiResponse = require('./data.json');
 
@@ -10,7 +9,6 @@ describe('Test FPS Connect Service', () => {
     let data = null;
     
     beforeAll(async () => {
-        process.env.FPS_PARENT_CREDENTIALS = credentials.cookie;
         axios.get.mockImplementationOnce(() => {
             return Promise.resolve(mockApiResponse);
         });

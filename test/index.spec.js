@@ -1,6 +1,5 @@
 
 const index = require('../index');
-const credentials = require('../credentials.json');
 const axios = require('axios');
 const mockApiResponse = require('./data.json');
 const notificationService = require('../notification.service');
@@ -10,12 +9,7 @@ jest.mock('axios');
 jest.mock('../notification.service');
 
 describe('Test index handler', () => {
-    let data = null;
     
-    beforeAll(async () => {
-        process.env.FPS_PARENT_CREDENTIALS = credentials.cookie;
-    });
-
     describe('Test with available mock', () => {
         beforeEach(() => {
             axios.get.mockImplementationOnce(() => {
