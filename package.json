@@ -1,7 +1,9 @@
 {
   "scripts": {
     "test": "jest",
-    "deploy": "serverless deploy"
+    "test:watch": "jest --watch",
+    "deploy": "serverless deploy",
+    "coverage": "jest --coverage"
   },
   "jest": {
     "globalSetup": "./test/global-setup.js"

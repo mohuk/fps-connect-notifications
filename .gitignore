@@ -7,3 +7,8 @@ jspm_packages
 
 # Credentials
 credentials.json
+
+.DS_Store
+
+# Code coverage
+coverage

@@ -1,4 +1,3 @@
-const { SMS } = require('aws-sdk');
 const AWS = require('aws-sdk');
 
 module.exports.sendSms = async function sendSms() {
