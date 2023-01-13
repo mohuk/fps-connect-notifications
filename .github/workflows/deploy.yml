@@ -12,7 +12,6 @@ on:
 
 jobs:
   deploy:
-    environment: Production
     if: ${{github.event.workflow_run.conclusion == 'success'}}
     runs-on: ubuntu-latest
     steps:
@@ -24,8 +23,6 @@ jobs:
         cache: 'npm'
       env: # Or as an environment variable
         FPS_PARENT_CREDENTIALS: ${{ secrets.FPS_PARENT_CREDENTIALS }}
-        HELLO_TEST: Test
     - run: echo $FPS_PARENT_CREDENTIALS
-    - run: echo $HELLO_TEST
     - run: npm ci
     - run: npm run deploy
