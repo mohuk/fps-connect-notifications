@@ -13,6 +13,8 @@ authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
 
 [![Tests](https://github.com/mohuk/fps-connect-notifications/actions/workflows/test.yml/badge.svg?branch=main&event=push)](https://github.com/mohuk/fps-connect-notifications/actions/workflows/test.yml)
 
+[![Build](https://github.com/mohuk/fps-connect-notifications/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/mohuk/fps-connect-notifications/actions/workflows/deploy.yml)
+
 # Serverless Framework AWS NodeJS Example
 
 This template demonstrates how to deploy a NodeJS function running on AWS Lambda using the traditional Serverless Framework. The deployed function does not include any event definitions as well as any kind of persistence (database). For more advanced configurations check out the [examples repo](https://github.com/serverless/examples/) which includes integrations with SQS, DynamoDB or examples of functions that are triggered in `cron`-like manner. For details about configuration of specific `events`, please refer to our [documentation](https://www.serverless.com/framework/docs/providers/aws/events/).
