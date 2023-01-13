@@ -11,6 +11,7 @@ authorName: 'Serverless, inc.'
 authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
 -->
 
+[![Tests](https://github.com/mohuk/fps-connect-notifications/actions/workflows/test.yml/badge.svg?branch=main&event=push)](https://github.com/mohuk/fps-connect-notifications/actions/workflows/test.yml)
 
 # Serverless Framework AWS NodeJS Example
 

@@ -4,11 +4,8 @@
 name: app-deploy
 
 on:
-  workflow_run:
-    workflows: [app-test]
-    branches: ["main"]
-    types:
-      - completed
+  push:
+    branches: [ "main" ]
 
 env:
   FPS_PARENT_CREDENTIALS: ${{ secrets.FPS_PARENT_CREDENTIALS }}
@@ -18,7 +15,6 @@ env:
 
 jobs:
   deploy:
-    if: ${{github.event.workflow_run.conclusion == 'success'}}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -27,6 +23,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: echo "Parent ID:$FPS_PARENT_CREDENTIALS"
     - run: npm ci
     - run: npm run deploy
