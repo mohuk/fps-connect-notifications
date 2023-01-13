@@ -10,6 +10,9 @@ on:
     types:
       - completed
 
+env:
+  FPS_PARENT_CREDENTIALS: ${{ secrets.FPS_PARENT_CREDENTIALS }}
+
 jobs:
   deploy:
     if: ${{github.event.workflow_run.conclusion == 'success'}}
@@ -21,6 +24,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: echo $FPS_PARENT_CREDENTIALS
+    - run: echo "Parent ID:$FPS_PARENT_CREDENTIALS"
     - run: npm ci
-    - run: FPS_PARENT_CREDENTIALS=${{ secrets.FPS_PARENT_CREDENTIALS }} ./node_modules/.bin/serverless deploy
+    - run: npm run deploy
